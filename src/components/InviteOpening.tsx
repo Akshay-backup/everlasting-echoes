@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { wedding } from "@/data/wedding";
+import { playSealCrack, playPaperSlide } from "@/lib/sfx";
 
 export function InviteOpening({ onDone }: { onDone: () => void }) {
   const [opened, setOpened] = useState(false);
@@ -9,6 +10,9 @@ export function InviteOpening({ onDone }: { onDone: () => void }) {
   const open = () => {
     if (opened) return;
     setOpened(true);
+    // SFX: wax crack immediately, paper slide as the letter rises
+    playSealCrack(0.32);
+    setTimeout(() => playPaperSlide(0.22, 1.4), 380);
     setTimeout(() => setHide(true), 2200);
     setTimeout(onDone, 2900);
   };
