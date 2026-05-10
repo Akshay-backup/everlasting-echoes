@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aanya & Vihaan — Wedding Invitation" },
+      { title: "Wedding Invitation7" },
       { name: "description", content: "A cinematic wedding invitation. Udaipur · 12.12.2026." },
       { name: "author", content: "Aanya & Vihaan" },
-      { property: "og:title", content: "Aanya & Vihaan — Wedding Invitation" },
-      { property: "og:description", content: "A cinematic celebration of love." },
+      { property: "og:title", content: "Wedding Invitation7" },
+      { property: "og:description", content: "A cinematic wedding invitation. Udaipur · 12.12.2026." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Wedding Invitation7" },
+      { name: "twitter:description", content: "A cinematic wedding invitation. Udaipur · 12.12.2026." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/35a05e96-5914-4145-aecf-d978706d3c12/id-preview-8cc5ba99--1eb47d51-ef44-491e-a10f-ea32ee36f71a.lovable.app-1778403105933.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/35a05e96-5914-4145-aecf-d978706d3c12/id-preview-8cc5ba99--1eb47d51-ef44-491e-a10f-ea32ee36f71a.lovable.app-1778403105933.png" },
     ],
     links: [
       {
