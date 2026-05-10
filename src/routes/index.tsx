@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Preloader } from "@/components/Preloader";
+import { InviteOpening } from "@/components/InviteOpening";
 import { Navigation } from "@/components/Navigation";
 import { Petals } from "@/components/Petals";
 import { MusicPlayer } from "@/components/MusicPlayer";
