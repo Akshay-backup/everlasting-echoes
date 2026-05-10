@@ -38,10 +38,12 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [ready, setReady] = useState(false);
+  const [opened, setOpened] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-background">
       <Preloader onDone={() => setReady(true)} />
+      {ready && !opened && <InviteOpening onDone={() => setOpened(true)} />}
       {ready && (
         <>
           <SmoothScroll />
