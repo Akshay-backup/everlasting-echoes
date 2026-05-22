@@ -13,8 +13,8 @@ export function InviteOpening({ onDone }: { onDone: () => void }) {
     // SFX: wax crack immediately, paper slide as the letter rises
     playSealCrack(0.32);
     setTimeout(() => playPaperSlide(0.22, 1.4), 380);
-    setTimeout(() => setHide(true), 2200);
-    setTimeout(onDone, 2900);
+    setTimeout(() => setHide(true), 4200);
+    setTimeout(onDone, 4900);
   };
 
   return (
@@ -82,20 +82,20 @@ export function InviteOpening({ onDone }: { onDone: () => void }) {
 
               {/* Letter that slides up after open */}
               <motion.div
-                className="absolute left-[8%] right-[8%] top-[14%] bottom-[14%] rounded-sm bg-card shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center px-4"
+                className="absolute left-[8%] right-[8%] top-[14%] bottom-[14%] rounded-sm bg-card shadow-[0_10px_30px_-10px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center px-4 z-20"
                 initial={{ y: 0 }}
-                animate={opened ? { y: "-90%" } : { y: 0 }}
+                animate={opened ? { y: "-115%" } : { y: 0 }}
                 transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
               >
-                <span className="font-body text-[8px] tracking-[0.5em] uppercase text-muted-foreground">
+                <span className="font-body text-[9px] tracking-[0.5em] uppercase text-muted-foreground">
                   The Wedding of
                 </span>
-                <div className="mt-2 flex items-center gap-2 font-display text-2xl text-primary">
-                  <span>{wedding.bride.initial}</span>
-                  <span className="font-script text-secondary text-xl">&amp;</span>
-                  <span>{wedding.groom.initial}</span>
+                <div className="mt-2 flex items-center gap-3 font-display text-3xl text-primary whitespace-nowrap">
+                  <span>{wedding.bride.name}</span>
+                  <span className="font-script text-secondary text-2xl">&amp;</span>
+                  <span>{wedding.groom.name}</span>
                 </div>
-                <span className="mt-2 font-body text-[8px] tracking-[0.4em] uppercase text-muted-foreground">
+                <span className="mt-2 font-body text-[9px] tracking-[0.4em] uppercase text-muted-foreground">
                   {wedding.shortDate}
                 </span>
               </motion.div>
