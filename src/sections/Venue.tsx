@@ -18,11 +18,16 @@ export function Venue() {
           transition={{ duration: 1.2 }}
           className="relative aspect-[4/3] lg:aspect-auto overflow-hidden rounded-sm shadow-elegant"
         >
-          <img
+          <motion.img
             src={wedding.venue.image}
             alt={wedding.venue.name}
             loading="lazy"
-            className="h-full w-full object-cover ken-burns"
+            className="h-full w-full object-cover"
+            initial={{ scale: 1.05 }}
+            whileInView={{ scale: 1.12 }}
+            viewport={{ once: true }}
+            transition={{ duration: 12, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-6 left-6 right-6 text-ivory">
