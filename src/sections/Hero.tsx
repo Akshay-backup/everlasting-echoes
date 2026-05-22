@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { wedding } from "@/data/wedding";
 
@@ -19,17 +19,26 @@ export function Hero() {
     <section id="hero" ref={ref} className="relative h-[100svh] w-full overflow-hidden bg-foreground">
       {/* Layered slideshow */}
       <div className="absolute inset-0">
-        {wedding.heroImages.map((src, i) => (
-          <motion.img
-            key={i}
-            src={src}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover ken-burns"
-            initial={false}
-            animate={{ opacity: i === idx ? 1 : 0 }}
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={idx}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 2.4, ease: [0.65, 0, 0.35, 1] }}
-          />
-        ))}
+          >
+            <motion.img
+              src={wedding.heroImages[idx]}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+              initial={{ scale: 1.04, x: "0%", y: "0%" }}
+              animate={{ scale: 1.12, x: "-1.2%", y: "-1.2%" }}
+              transition={{ duration: 7.2, ease: [0.22, 1, 0.36, 1] }}
+              style={{ willChange: "transform" }}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Cinematic overlays */}
