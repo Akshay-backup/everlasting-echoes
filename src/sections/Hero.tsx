@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section id="hero" ref={ref} className="relative h-[100svh] w-full overflow-hidden bg-foreground">
       {/* Layered slideshow */}
-      <motion.div style={{ scale }} className="absolute inset-0">
+      <div className="absolute inset-0">
         {wedding.heroImages.map((src, i) => (
           <motion.img
             key={i}
@@ -26,11 +26,11 @@ export function Hero() {
             alt=""
             className="absolute inset-0 h-full w-full object-cover ken-burns"
             initial={false}
-            animate={{ opacity: i === idx ? 1 : 0, filter: i === idx ? "blur(0px)" : "blur(12px)" }}
+            animate={{ opacity: i === idx ? 1 : 0 }}
             transition={{ duration: 2.4, ease: [0.65, 0, 0.35, 1] }}
           />
         ))}
-      </motion.div>
+      </div>
 
       {/* Cinematic overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70" />
