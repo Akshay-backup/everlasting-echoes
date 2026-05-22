@@ -13,8 +13,8 @@ export function InviteOpening({ onDone }: { onDone: () => void }) {
     // SFX: wax crack immediately, paper slide as the letter rises
     playSealCrack(0.32);
     setTimeout(() => playPaperSlide(0.22, 1.4), 380);
-    setTimeout(() => setHide(true), 2200);
-    setTimeout(onDone, 2900);
+    setTimeout(() => setHide(true), 4200);
+    setTimeout(onDone, 4900);
   };
 
   return (
